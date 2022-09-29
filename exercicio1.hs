@@ -39,3 +39,15 @@ retornaSup n (x:xs)
         | otherwise = retornaSup n xs
 
 retornaSup2 n (x:xs) = [x | x <- x:xs, n < x]
+
+
+
+paresCons :: [b] -> [(b, b)]
+paresCons (x:xs)= zip (x:xs) xs
+
+
+
+isPrime :: Integral a => a -> Bool
+isPrime n = length ([x | x<-[1..n], n`mod`x==0]) == 2
+
+primos l = [x | x <- l, isPrime x]
