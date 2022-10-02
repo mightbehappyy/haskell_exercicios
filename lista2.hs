@@ -1,3 +1,5 @@
+import Data.List
+
 --Primeira questão
 
 soma n1 n2 = sum (replicate n1 n2)
@@ -39,3 +41,14 @@ adcPosicaoN (x:xs) n p  = x: adcPosicaoN xs (n-1) p
 delPosicaoN :: [Int] -> Int -> [Int]
 delPosicaoN (x:xs) 0 = [x]
 delPosicaoN (x:xs) n = delPosicaoN xs (n-1)
+
+-- oitava questão 
+
+mergesort [] xs = xs
+mergesort xs [] = xs
+mergesort (x:xs) (y:ys) 
+    | x < y = x: mergesort xs (y:ys)
+    | otherwise = y:mergesort (x:xs) ys
+
+-- nona questão 
+repeticaoLista n l = [x | x <- n, x `elem` l ]
