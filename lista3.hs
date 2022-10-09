@@ -45,3 +45,16 @@ listaX = [x |x<-[1,2]]
 listaY = [y |y<-[3,4]]
 
 juntar = concat [[(x, y) | y <- listaY] | x <- listaX]
+
+
+--oitava questão
+
+posicoes :: Eq a => a -> [a] -> [Int]
+posicoes x xs = [i | (z, i) <- zip xs [0 ..], x == z]
+
+buscar :: Eq a => a -> [(a,b)] -> [b]
+buscar k xs = [v | (k', v) <- xs, k == k']
+
+
+buscar2 z q = [v | (z', v) <- zip q [0..], z == z']
+
